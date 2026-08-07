@@ -1,8 +1,13 @@
+
 {
-  "name": "rvm-bus-2501-tcp-listener",
+  "name": "rvm-bus-2501-poller",
   "main": "server.js",
   "dependencies": {
     "express": "^4.18.2",
-    "firebase-admin": "^12.1.0"
+    "firebase-admin": "^12.1.0",
+    "axios": "^1.6.0"
+  },
+  "scripts": {
+    "start": "node server.js"
   }
 }
