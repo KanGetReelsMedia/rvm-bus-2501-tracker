@@ -1,0 +1,28 @@
+
+app = "rvm-bus-2501"
+primary_region = "ord"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  PORT = "8080"
+  FIREBASE_RTDB_URL = "https://rvm-software-manifest-default-rtdb.firebaseio.com"
+
+[[services]]
+  internal_port = 8090
+  protocol = "tcp"
+  [[services.ports]]
+    port = 8090
+
+[[services]]
+  internal_port = 8080
+  protocol = "tcp"
+  [[services.ports]]
+    port = 80
+    handlers = ["http"]
+  [[services.ports]]
+    port = 443
+    handlers = ["http", "tls"]
+  [services.ports]
+    handlers = ["http"]
